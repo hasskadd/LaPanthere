@@ -1,3 +1,4 @@
+## EXPIRES CACHING ##
 <IfModule mod_expires.c>
   ExpiresActive On
 
@@ -22,4 +23,20 @@
   # JavaScript
   ExpiresByType js/javascript "access plus 1 year"
   
+</IfModule>
+## EXPIRES CACHING ##
+
+<IfModule mod_headers.c>
+    <filesmatch "\.(ico|flv|gif|swf|eot|woff|otf|ttf|svg)$">
+        Header set Cache-Control "max-age=31536000, public"
+    </filesmatch>
+    <filesmatch "\.(jpg|jpeg|png)$">
+        Header set Cache-Control "max-age=31536000, public"
+    </filesmatch>
+    <filesmatch "\.(css)$">
+        Header set Cache-Control "max-age=31536000, private"
+    </filesmatch>
+    <filesmatch "\.(js)$">
+        Header set Cache-Control "max-age=31536000, private"
+    </filesmatch>
 </IfModule>
