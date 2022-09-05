@@ -298,7 +298,7 @@ a:hover {
 
 .navbar-brand img {
     height: 40px;
-    width: 100%;
+    width: auto;
     margin: 0 5px 0 0;
     display: inline;
 }
